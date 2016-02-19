@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Cingo - Questions and Answers</h1>
+    <p>Cingo is a Saas help desk solution designed to remove frustration when customers call help desk.
+    </p>
+  </div>
+  <% if not @questions.empty? %>
+  <h2>Recently asked questions...</h2>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="boxes">
+      <% @questions.each do |q| %>
+      <div class="media" data-target="<%= question_path(q) %>">
+      <div class="media-left">
+      <a href="#">
+         <img class="media-object" src="<%= q.gravatar %>">
+      </a>
+      </div>
+      <div class="media-body">
+        <h6 class="media-heading"><%= q.email %> asked: </h6>
+        <div class="time hidden-xs"><%= time_ago_in_words q.created_at %> ago </div>
+        <h4 class="media-heading"><%= truncate q.body, length: 100 %> </h4>
+       <div class="hidden-xs">
+        <a href="<%= question_path(q) %>" class="btn btn-primary btn-xs">View Answers</a>
+       </div>
+      </div>
+      </div>
+      <% end %>
+  <div>
+
+  <% if @questions.empty? %>
+  <div class="alert alert-info">Be the first to ask a question!</div>
+  <% end %>
+</div>
