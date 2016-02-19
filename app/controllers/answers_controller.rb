@@ -6,11 +6,10 @@ class AnswersController < ApplicationController
   begin
     # Active job with Sucker punch
     MainMailer.notify_question_author(answer).deliver_later
-  rescue StandardError=>e
-    puts "Error: #{e}"
   ensure
     session[:current_user_email] = answer_params[:email]
     redirect_to question
+  end
   end
 
   private
