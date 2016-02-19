@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
 
     # Active job with Sucker punch
     MainMailer.notify_question_author(answer).deliver_later
-
+  ensure
     session[:current_user_email] = answer_params[:email]
     redirect_to question
   end
