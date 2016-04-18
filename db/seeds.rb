@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#question = Question.create(email: 'naveen@cingo.me', body: 'what is your favorite color?')
+#answer = Answer.create(question_id: question.first)
