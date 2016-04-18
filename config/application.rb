@@ -26,14 +26,5 @@ module HU
     end
 
     config.active_record.raise_in_transactional_callbacks = true
-    config.middleware.use Rack::Cors do
-      allow do
-        origins '*'
-        resource '*',
-          :headers => :any,
-          :methods => [:post,:get, :put, :patch, :options],
-          :max_age => 15
-      end
-    end
   end
 end
