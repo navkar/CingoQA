@@ -2,9 +2,7 @@
   <div class="lead well">
     <div class="media">
       <div class="media-left">
-      <a href="#">
-         <img class="media-object" src="<%= @question.gravatar %>">
-      </a>
+        <img class="media-object" src="<%= @question.gravatar %>">
       </div>
       <div class="media-body">
         <h6 class="media-heading"><%= @question.email %> asked: </h6>
@@ -22,9 +20,7 @@
          <% @answers.each do |answer| %>
             <div class="media">
               <div class="media-left">
-              <a href="#">
-                 <img class="media-object" src="<%= answer.gravatar %>">
-              </a>
+                <img class="media-object" src="<%= answer.gravatar %>">
               </div>
               <div class="media-body">
                 <h6 class="media-heading"><%= answer.email %> answered: (<%= time_ago_in_words answer.created_at %> ago) </h6>
